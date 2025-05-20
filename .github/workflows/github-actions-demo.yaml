@@ -1,0 +1,11 @@
+name: example_workflow_container
+on:
+  push:
+    branches: [main]
+jobs:
+  print_default_env:
+    runs-on: [aliyun]
+    env:
+      MY_ENV_PATH: 'value is ${{ github.ref }}'
+    steps:
+      - run: echo $MY_ENV_PATH
