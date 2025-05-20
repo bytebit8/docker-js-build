@@ -1,0 +1,7 @@
+name: example_workflow
+on: [push]
+jobs:
+  print_branch_name:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "'Current branch:' ${{ github.ref_name }}"
