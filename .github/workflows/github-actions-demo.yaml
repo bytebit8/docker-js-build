@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       fruits: '[{"name": "apple", "quantity": 1}, {"name": "orange", "quantity": 2}, {"name": "pear", "quantity": 1}]'
-      fruit_name: ${{ toJSON(fruits).*.name }}
+      fruit_name: ${{ toJSON(env.fruits).*.name }}
     steps:
       - run: echo $fruit_name
