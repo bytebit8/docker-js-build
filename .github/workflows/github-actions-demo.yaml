@@ -6,6 +6,6 @@ jobs:
   print_default_env:
     runs-on: ubuntu-latest
     env:
-      OS: ${{ github.runner_os }}
+      OS: ${{ runner.os }}
     steps:
       - run: echo $OS
