@@ -11,4 +11,6 @@ jobs:
       FRUITS: '[{"name": "apple", "quantity": 1}, {"name": "orange", "quantity": 2}, {"name": "pear", "quantity": 1}]'
     steps:
       - name: print_fruits
-        run: echo ${{ fromJSON(env.FRUITS) }}
+        env:
+          FRUIT_NAMES: ${{ fromJSON(env.FRUITS).*.name }}
+        run: echo $FRUIT_NAMES
