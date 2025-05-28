@@ -7,5 +7,7 @@ on:
 jobs:
   execute_function:
     runs-on: ubuntu-latest
+    env:
+      TESTA: ${{ contains("hello", "e") }}
     steps:
-      - run: echo '${{ contains("hello", "e") }}'
+      - run: echo $TESTA
