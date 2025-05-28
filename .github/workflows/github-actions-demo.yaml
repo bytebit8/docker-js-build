@@ -6,6 +6,6 @@ jobs:
   print_default_env:
     runs-on: [aliyun]
     env:
-      MY_ENV_PATH: 'value is ${{ github.ref }}'
+      MY_ENV_PATH: 'value is ${{ runner.os }}'
     steps:
-      - run: echo $RUNNER_OS
+      - run: echo $MY_ENV_PATH
