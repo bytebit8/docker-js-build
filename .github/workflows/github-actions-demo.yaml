@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VAR1: hello
-      VAR2: ${{ env.VAR1 }}
     steps:
       - name: 正确使用 env
         # ✅ 在 env 字段中使用 ${{ env.VAR }}
