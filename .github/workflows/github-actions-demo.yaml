@@ -1,7 +1,8 @@
 name: workflow_demo
 
 on:
-  push: [main]
+  push:
+    branches: [main]
 
 jobs:
   execute_function:
