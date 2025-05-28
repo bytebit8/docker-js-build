@@ -13,4 +13,4 @@ jobs:
       - name: print_fruits
         env:
           FRUIT_NAMES: ${{ fromJSON(env.FRUITS) }}
-        run: echo $FRUIT_NAMES[0].name
+        run: echo $FRUIT_NAMES
