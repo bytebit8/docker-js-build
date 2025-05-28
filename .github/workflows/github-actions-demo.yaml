@@ -4,8 +4,8 @@ on:
     branches: [main]
 jobs:
   print_os_name:
-	runs-on: ubuntu-latest
-	steps:
-	  env:
-	    OS: runner.os
-	  run: echo $OS
+	  runs-on: ubuntu-latest
+	  steps:
+	    env:
+	      OS: runner.os
+	    run: echo $OS
