@@ -1,12 +1,10 @@
-name: example_workflow_container
+name: workflow_demo
+
 on:
-  push:
-    branches: [main]
+  push: [main]
+
 jobs:
-  print_os_name:
+  execute_function:
     runs-on: ubuntu-latest
     steps:
-      - name: print_os_name
-        env:
-          OS: ${{[linux, macos, windows]}}
-        run: echo $OS
+      - run: echo ${{ contains("hello", "e") }}
