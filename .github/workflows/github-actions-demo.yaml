@@ -4,7 +4,7 @@ on:
     branches: [main]
 jobs:
   print_default_env:
-    runs-on: [aliyun]
-
+    env:
+      OS: ${{ github.runner_os }}
     steps:
-      - run: echo '${{ toJSON(github) }} | jp'
+      - run: echo $OS
