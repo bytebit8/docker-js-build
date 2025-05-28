@@ -8,5 +8,5 @@ jobs:
     steps:
       - name: print_os_name
         env:
-          OS: ${['linux', 'os', 'xx']}
+          OS: ${{['linux', 'macos', 'windows']}}
         run: echo $OS
