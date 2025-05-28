@@ -6,6 +6,6 @@ jobs:
   print_default_env:
     runs-on: ubuntu-latest
     env:
-      COUNT: "${{ 1 + 2}}"
+      COUNT: ${{ 1 + 2}}
     steps:
       - run: echo $COUNT
