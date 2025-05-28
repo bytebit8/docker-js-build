@@ -11,6 +11,4 @@ jobs:
       FRUITS: ${{ fromJSON('[{"name": "apple", "quantity": 1}, {"name": "orange", "quantity": 2}, {"name": "pear", "quantity": 1}]')}}
     steps:
       - name: print_fruits
-        env:
-     
         run: echo $FRUITS
