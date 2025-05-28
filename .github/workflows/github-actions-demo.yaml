@@ -6,6 +6,7 @@ jobs:
   print_default_env:
     runs-on: ubuntu-latest
     steps:
-      env:
+     - name: step1
+       env:
         OS: ${{ runner.os }}
-      - run: echo $OS
+       run: echo $OS
