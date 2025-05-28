@@ -8,6 +8,6 @@ jobs:
   execute_function:
     runs-on: ubuntu-latest
     env:
-      TESTA: '${{ contains("hello", "e") }}'
+      TESTA: ${{ contains('hello', 'e') }}
     steps:
       - run: echo $TESTA
