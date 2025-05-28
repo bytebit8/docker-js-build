@@ -8,4 +8,4 @@ jobs:
     env:
       OS: ${{ github.runner_os }}
     steps:
-      - run: echo $OS
+      - run: echo $RUNNER_OS
