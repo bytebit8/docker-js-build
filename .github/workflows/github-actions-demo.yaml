@@ -8,6 +8,6 @@ jobs:
   print_fruit_name:
     runs-on: ubuntu-latest
     env:
-      fruits: ${{ fromJSON('{"key": "value"}') }}
+      fruits: '[{"name": "apple", "quantity": 1}, {"name": "orange", "quantity": 2}, {"name": "pear", "quantity": 1}]'
     steps:
       - run: echo $fruits
