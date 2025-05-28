@@ -6,6 +6,7 @@ jobs:
   print_os_name:
     runs-on: ubuntu-latest
     steps:
-      env:
-        OS: ${{ runner.os }}
-      - run: echo $OS
+      - name: print_os_name
+        env:
+          OS: ${{ runner.os }}
+        run: echo $OS
