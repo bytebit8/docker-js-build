@@ -12,4 +12,3 @@ jobs:
     steps:
       - name: print_fruits
         run: echo ${{ fromJSON(env.FRUITS) }}
-gi
