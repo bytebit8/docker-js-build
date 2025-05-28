@@ -8,5 +8,5 @@ jobs:
     steps:
       - name: print_os_name
         env:
-          OS: ${{ runner.os }}
+          OS: "Os is ${{ runner.os }}"
         run: echo $OS
