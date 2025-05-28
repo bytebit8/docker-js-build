@@ -7,4 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     env:
       COUNT: "${{ 1 + 2}}"
-    run: echo $COUNT
+    steps:
+      - run: echo $COUNT
