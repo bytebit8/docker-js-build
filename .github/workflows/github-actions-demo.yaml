@@ -7,10 +7,6 @@ on:
 jobs:
   fruits:
     runs-on: ubuntu-latest
-    env:
-      FRUITS: '[{"name": "apple", "quantity": 1}, {"name": "orange", "quantity": 2}, {"name": "pear", "quantity": 1}]'
     steps:
       - name: print_fruits
-        env:
-          XYZ: ${{ env.FRUITS.*.name }}
-        run: echo $XYZ
+        run: echo ${{ toJSON($github) }}
