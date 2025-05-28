@@ -8,9 +8,9 @@ jobs:
   fruits:
     runs-on: ubuntu-latest
     env:
-      FRUITS: ${{ fromJSON('[{"name": "apple", "quantity": 1}, {"name": "orange", "quantity": 2}, {"name": "pear", "quantity": 1}]') }}
+      FRUITS: ${{ fromJSON('[{"name": "apple", "quantity": 1}, {"name": "orange", "quantity": 2}, {"name": "pear", "quantity": 1}]').*.name }}
     steps:
       - name: print_fruits
         env:
-          FRUIT_NAMES: ${{ env.FRUITS.*.name}}
-        run: echo $FRUIT_NAMES
+     
+        run: echo $FRUITS
