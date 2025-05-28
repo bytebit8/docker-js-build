@@ -3,9 +3,9 @@ on:
   push:
     branches: [main]
 jobs:
-  print_default_env:
-    runs-on: ubuntu-latest
-    env:
-      COUNT: 1 < 2
-    steps:
-      - run: echo $COUNT
+  print_os_name:
+	runs-on: ubuntu-latest
+	steps:
+	  env:
+	    OS: runner.os
+	  run: echo $OS
