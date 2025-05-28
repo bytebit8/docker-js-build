@@ -1,14 +1,24 @@
-name: workflow_demo
-
-on:
-  push:
-    branches: [main]
-
 jobs:
-  print_fruit_name:
+  filter-example:
     runs-on: ubuntu-latest
-    env:
-      fruits: ${{ fromJson('[{"name": "apple", "quantity": 1}, {"name": "orange", "quantity": 2}, {"name": "pear", "quantity": 1}]') }}
-      fruit_name: ${{env.fruits.*.name }}
     steps:
-      - run: echo $fruit_name
+      - name: Filter array of objects
+        env:
+          # 模拟一个包含蔬菜对象的数组
+          VEGETABLES: ${{ toJSON([
+            { "name": "carrot", "ediblePortions": ["roots"] },
+            { "name": "broccoli", "ediblePortions": ["flowers", "stems"] },
+            { "name": "spinach", "ediblePortions": ["leaves"] }
+          ]) }}
+          
+          # 提取所有蔬菜的可食用部分
+          ALL_EDIBLE_PARTS: ${{ fromJSON(env.VEGETABLES).*.ediblePortions }}
+          
+          # 提取所有蔬菜的名称
+          ALL_NAMES: ${{ fromJSON(env.VEGETABLES).*.name }}
+        run: |
+          echo "All edible parts: $ALL_EDIBLE_PARTS"
+          # 输出: [["roots"], ["flowers", "stems"], ["leaves"]]
+          
+          echo "All names: $ALL_NAMES"
+          # 输出: ["carrot", "broccoli", "spinach"]
