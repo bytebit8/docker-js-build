@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: print_fruits
         env:
-          XYZ: ${{ env.FRUITS }}
+          XYZ: ${{ env.FRUITS.*.name }}
         run: echo $XYZ
