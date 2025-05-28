@@ -5,14 +5,10 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  fruits:
     runs-on: ubuntu-latest
     env:
-      VAR1: hello
+      FRUITS: '[{"name": "apple", "quantity": 1}, {"name": "orange", "quantity": 2}, {"name": "pear", "quantity": 1}]'
     steps:
-      - name: 正确使用 env
-        # ✅ 在 env 字段中使用 ${{ env.VAR }}
-        env:
-          COMBINED: ${{ env.VAR1 }} world
-        # ✅ 在 shell 脚本中使用 $变量名
-        run: echo $COMBINED  # 输出: hello world
+      - name: print_fruits
+        run: echo ${{ env.FRUITS }}
