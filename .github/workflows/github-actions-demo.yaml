@@ -10,4 +10,4 @@ jobs:
     env:
       TESTA: ${{ contains('hello', 'e') }}
     steps:
-      - run: echo $TESTA
+      - run: echo ${{ contains('hello', 'e') }}
