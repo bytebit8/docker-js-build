@@ -8,4 +8,4 @@ jobs:
   execute_function:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ contains("hello", "e") }}
+      - run: echo '${{ contains("hello", "e") }}'
