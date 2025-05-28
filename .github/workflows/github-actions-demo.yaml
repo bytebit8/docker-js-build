@@ -8,7 +8,7 @@ jobs:
   print_fruit_name:
     runs-on: ubuntu-latest
     env:
-      FRUITS: '[{"name": "apple", "quantity": 1}, {"name": "orange", "quantity": 2}, {"name": "pear", "quantity": 1}]'
-      FRUITS_NAMES: ${{env.FRUITS }}
+      KEY_1: hello
+      KEY_2: ${{ env.KEY_1 }}
     steps:
-      - run: echo $fruit_name
+      - run: echo $KEY_2
