@@ -7,5 +7,5 @@ jobs:
 	  runs-on: ubuntu-latest
 	  steps:
 	    env:
-	      OS: runner.os
+	      OS: ${{runner.os}}
 	    run: echo $OS
