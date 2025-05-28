@@ -5,9 +5,14 @@ on:
     branches: [main]
 
 jobs:
-  execute_function:
+  print_fruit_name:
     runs-on: ubuntu-latest
     env:
-      TESTA: ${{ contains('hello', 'e') }}
+      fruits: ${{ toJSON([
+        { "name": 'apple', 'quantity': "1" },
+        { "name": 'orange', 'quantity': "2" },
+        { "name": 'pear', 'quantity': "1" }
+        ]) }}
+      fruit_name: ${{env.fruits.*.name }}
     steps:
-      - run: echo ${{ contains('hello', 'e') }}
+      - run: echo $fruit_name
