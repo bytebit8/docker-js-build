@@ -6,6 +6,6 @@ jobs:
   print_default_env:
     runs-on: [aliyun]
     env:
-      OS:  ${{ runner.os }}
+      OS: ${{ runner.os }}
     steps:
       - run: echo $OS
