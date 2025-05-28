@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: print_fruits
         env:
-          XYZ: ${{ fromJSON(env.FRUITS) }}
-        run: echo 11
+          XYZ: ${{ env.FRUITS }}
+        run: echo $XYZ
