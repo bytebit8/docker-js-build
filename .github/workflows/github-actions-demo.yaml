@@ -10,5 +10,5 @@ jobs:
     steps:
       - name: print_fruits
         env:
-          XYZ: ${{ github.event.commits }}
+          XYZ: ${{ toJSON(github.event.commits) }}
         run: echo $XYZ
