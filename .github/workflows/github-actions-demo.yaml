@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: print_job1_env1
         run: echo "${{ env.job1_env1 }}"
-      - name: print_job1_env2
-        run: echo "${{ env.job1_env2 }}"
   job2:
     runs-on: ubuntu-latest
     env:
