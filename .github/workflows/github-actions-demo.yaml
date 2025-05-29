@@ -5,13 +5,12 @@ on:
     branches: [main]
 
 env:
-  job_env: job_env1
+  DAY_OF_WEEK: Monday
 
 jobs:
   job1:
     runs-on: ubuntu-latest
-    env:
-      job1_env1: ${{ env.job_env }}
+
     steps:
       - name: print_job1_env1
-        run: echo "${{ env.job1_env1 }}"
+        run: echo $DAY_OF_WEEK
