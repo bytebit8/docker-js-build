@@ -12,4 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print_job1_env1
-        run: echo "${{ env.job_env }}"
+        env:
+          job1_env1: ${{ env.job_env }}
+        run: echo "${{ env.job1_env1 }}"
