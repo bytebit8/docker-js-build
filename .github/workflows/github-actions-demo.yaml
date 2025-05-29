@@ -10,3 +10,6 @@ jobs:
     env:
       A1: a
       B1: b-${{ env.A1 }}
+    steps:
+      - run: echo ${{ env.A1 }}
+      - run: echo $B1
