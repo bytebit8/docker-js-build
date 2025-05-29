@@ -13,5 +13,5 @@ jobs:
     steps:
       - name: print_fruits
         env:
-          A1: 'a ${{env.B1}}'
+          A1: a ${{env.B1}}
         run: echo "${{env.A1}}"
