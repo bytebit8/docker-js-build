@@ -13,4 +13,4 @@ jobs:
 
     steps:
       - name: print_job1_env1
-        run: echo $DAY_OF_WEEK
+        run: echo "${{ env.DAY_OF_WEEK }}"
