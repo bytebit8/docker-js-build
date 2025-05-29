@@ -5,14 +5,13 @@ on:
     branches: [main]
 
 jobs:
-  fruits:
-    env:
-      B1: b
+  job1:
     runs-on: ubuntu-latest
+    env:
+      job1_env1: job1
+      job1_env2: ${{ env.job1_env1 }}
     steps:
-      - name: print_fruits
-        env:
-          A1: a ${{env.B1}}
-        run: echo "${{env.A1}}"
-      - name: print_github
-        run: echo "${{toJSON(env)}}"
+      - name: print_job1_env1
+        run: echo "${{ env.job1_env1 }}"
+      - name: print_job1_env2
+        run: echo "${{ env.job1_env2 }}"
