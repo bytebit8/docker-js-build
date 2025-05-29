@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
 
+env:
+  job_env: job_env
+
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -17,7 +20,7 @@ jobs:
   job2:
     runs-on: ubuntu-latest
     env:
-      job2_env1: ${{env.job1_env1}}
+      job2_env1: ${{env.job_env}}
     steps:
       - name: print_job2_env1
         run: echo "${{ env.job2_env1 }}"
