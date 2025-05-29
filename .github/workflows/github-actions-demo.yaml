@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 env:
-  job_env: job_env
+  job_env: job_env1
 
 jobs:
   job1:
