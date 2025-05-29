@@ -9,4 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print_fruits
-        run: echo ${{ toJSON(github.event.commits) }}
+        env:
+          XYZ: ${{ github.event.commits }}
+        run: echo $XYZ
