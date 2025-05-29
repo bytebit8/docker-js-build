@@ -13,5 +13,5 @@ jobs:
       - name: print_fruits
         env:
           A1: a ${{env.B1}}
-      - run: echo "${{env.A1}}"
-      - run: echo "${toJSON(github)}"
+        run: echo "${{env.A1}}"
+        run: echo "${toJSON(github)}"
