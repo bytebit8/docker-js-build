@@ -6,8 +6,10 @@ on:
 
 jobs:
   fruits:
+    env:
+      B1: b
     runs-on: ubuntu-latest
     env:
-      A1: a
+      A1: 'a ${{env.B1}}'
     steps:
       - run: echo "${{env.A1}}"
