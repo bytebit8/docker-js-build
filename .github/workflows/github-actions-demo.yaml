@@ -18,7 +18,7 @@ jobs:
   job2:
     runs-on: ubuntu-latest
     env:
-      job2_env1: ${{env.job_env}}
+      job2_env1: '${{env.job_env}}'
     steps:
       - name: print_job2_env1
         run: echo "${{ env.job2_env1 }}"
