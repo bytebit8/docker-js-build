@@ -15,4 +15,4 @@ jobs:
           A1: a ${{env.B1}}
         run: echo "${{env.A1}}"
       - name: print_github
-        run: echo "${toJSON(github)}"
+        run: echo "${{toJSON(github)}}"
