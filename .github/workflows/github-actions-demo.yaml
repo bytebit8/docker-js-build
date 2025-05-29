@@ -5,11 +5,13 @@ on:
     branches: [main]
 
 env:
-  job_env: job_env1
+  job_env: job_env
 
 jobs:
   job1:
     runs-on: ubuntu-latest
+    env:
+      job_env_a: ${{ env.job_env }}
     steps:
       - name: print_job1_env1
         env:
