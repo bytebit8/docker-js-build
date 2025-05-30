@@ -7,7 +7,6 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    env:
-      RUNNER_INFO: "${{ toJSON(runner) }}"
     steps:
-      - run: echo $RUNNER_INFO
+      - run: echo "${{ github['sha']}}"
+      - run: echo "${{ github.sha}}"
