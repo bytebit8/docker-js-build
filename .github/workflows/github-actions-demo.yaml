@@ -7,7 +7,6 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    env:
-      REF: ${{ github.ref }}
+    if: ${{ contains(github.ref, 'main') }}
     steps:
-      - run: echo $REF
+      - run: echo $GITHUB_REF
