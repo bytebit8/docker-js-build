@@ -8,4 +8,4 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo $APP_USER_NAME
+      - run: echo "${{var.APP_USER_NAME}}"
