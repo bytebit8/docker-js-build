@@ -10,7 +10,6 @@ env:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    if: ${{ env.ENV1 == 'ENV1' }}
     steps:
       - name: print_env
         env:
