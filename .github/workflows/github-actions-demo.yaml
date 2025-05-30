@@ -4,12 +4,15 @@ on:
   push:
     branches: [main]
 
+env:
+  ENV1: ENV1
+
 jobs:
   job1:
     runs-on: ubuntu-latest
+    if: ${{ env.ENV1 == 'ENV1' }}
     steps:
       - name: print_env
         env:
-          ENV1: ENV1
-          EVN2: ${{ env.ENV1 }}
-        run: echo "${{ env.EVN2 }}"
+          STEP_ENV1: ${{ env.ENV1 }}
+        run: echo "${{ env.STEP_ENV1 }}"
