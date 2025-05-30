@@ -7,5 +7,7 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    env:
+      RUNNER_INFO: "${{ toJSON(runner) }}"
     steps:
-      - run: echo "${{ toJSON(runner) }}"
+      - run: echo $RUNNER_INFO
