@@ -4,9 +4,12 @@ on:
   push:
     branches: [main]
 
+env:
+  SHA_1: ${{ github['sha'] }}
+  SHA_2: ${{ github.sha }}
+
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github['sha']}}"
-      - run: echo "${{ github.sha}}"
+      - run: echo $SHA_1 | $SHA_2
