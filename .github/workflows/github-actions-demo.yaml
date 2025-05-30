@@ -8,4 +8,4 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{vars.APP_USER_NAME}}"
+      - run: echo "${{ toJSON(runner) }}"
