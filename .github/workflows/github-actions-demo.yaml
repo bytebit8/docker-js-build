@@ -12,4 +12,4 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo $SHA_1 | $SHA_2
+      - run: echo $SHA_1 $SHA_2
