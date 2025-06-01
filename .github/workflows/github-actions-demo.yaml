@@ -12,5 +12,5 @@ jobs:
   job1:
     runs-on: aliyun
     steps:
-      - run: sleep 3
-      - run: echo "Success!"
+      - run: sleep 5
+      - run: echo "Success1!"
