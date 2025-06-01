@@ -2,11 +2,11 @@ name: workflow_demo
 
 on:
   push:
-    branches: [aliyun]
+    branches: [main]
 
 jobs:
   job1:
-    runs-on: ubuntu-latest
+    runs-on: aliyun
     steps:
       - run: sleep 3
       - run: echo "Success!"
