@@ -1,12 +1,17 @@
 name: workflow_demo
 
 on:
-  pull_request
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: list npm config
+        run: npm config list -l
       - uses: actions/checkout@v3
       - uses: actions/cache@v4
         with:
@@ -16,6 +21,4 @@ jobs:
         run: npm install
       - name: Build Product
         run: npm run build
-      - name: list files
-        run: ls -lha ~
 # 使用 cache 缓存依赖2
