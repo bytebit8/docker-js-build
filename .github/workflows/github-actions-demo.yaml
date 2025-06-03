@@ -1,8 +1,12 @@
 name: workflow_demo
 
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Your name"
+        required: true
+        default: ""
 
 concurrency:
   group: ${{ github.workflow}}-${{ github.ref }}
@@ -12,5 +16,4 @@ jobs:
   job1:
     runs-on: aliyun
     steps:
-      - run: sleep 10
-      - run: echo "Success5!"
+      - run: echo "Hello ${{ inputs.name }}!"

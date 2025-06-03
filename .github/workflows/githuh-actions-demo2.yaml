@@ -1,12 +1,8 @@
 name: workflow_demo2
 
 on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: "Your name"
-        required: true
-        default: ""
+  push:
+    branches: [develop]
 
 concurrency:
   group: build
@@ -16,4 +12,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello ${{ inputs.name }}!"
+      - run: sleep 3
+      - run: echo "Success!"
