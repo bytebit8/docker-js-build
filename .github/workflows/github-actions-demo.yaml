@@ -1,19 +1,21 @@
 name: workflow_demo
 
 on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: "Your name"
-        required: true
-        default: ""
-
-concurrency:
-  group: ${{ github.workflow}}-${{ github.ref }}
-  cancel-in-progress: true
+  pull_request
 
 jobs:
-  job1:
-    runs-on: aliyun
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello ${{ inputs.name }}!"
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v4
+        with:
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+          path: ~/.npm
+      - name: Install dependencies
+        run: npm install
+      - name: Build Product
+        run: npm run build
+      - name: list files
+        run: ls -lha ~
+# 使用 cache 缓存依赖2
