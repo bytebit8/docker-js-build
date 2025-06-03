@@ -11,7 +11,7 @@ jobs:
       - uses: actions/cache@v4
         with:
           key: node-modules-${{ hashFiles('package-lock.json') }}
-          path:~/.npm
+          path: ~/.npm
       - name: Install dependencies
         run: npm install
       - name: Build Product
