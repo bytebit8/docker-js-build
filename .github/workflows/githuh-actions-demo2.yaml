@@ -1,16 +1,19 @@
-name: download-artifact
+name: workflow_demo
 
 on: pull_request
 
 jobs:
-  job0:
-    runs-on: ubuntu-latest
-    if: ${{ always() }}
+  job1:
+    runs-on: aliyun
     steps:
-      - run: exit 1
-  job:
-    runs-on: ubuntu-latest
-    needs: job0
+      - run: echo "job1!"
+  job2:
+    runs-on: aliyun
+    if: ${{ failure() }}
+    steps:
+      - run: echo "failure!"
+  job3:
+    runs-on: aliyun
     if: ${{ success() }}
     steps:
-      - run: echo "Success!"
+      - run: echo "success!"
