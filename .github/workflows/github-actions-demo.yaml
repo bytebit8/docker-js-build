@@ -1,8 +1,11 @@
 name: workflow_demo
 
 on:
-  push:
-    branches: [main]
+  pull_request_target:
+    types:
+      - opened
+    branches:
+      - main
 
 jobs:
   build:
