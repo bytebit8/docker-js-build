@@ -25,3 +25,9 @@ jobs:
     if: ${{ always() }}
     steps:
       - run: echo "always!"
+  job-cancelled:
+    runs-on: aliyun
+    needs: job
+    if: ${{ cancelled() }}
+    steps:
+      - run: echo "cancelled!"
