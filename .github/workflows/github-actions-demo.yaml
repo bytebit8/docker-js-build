@@ -37,11 +37,15 @@ jobs:
         run: npm install
       - name: Build product
         run: npm run build
+      - name: Generate build provenance
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: dist
+          subject-type: directory
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: assets.zip
+          name: assets
           path: |
             dist
             !dist/**/*.md
-          provenance: true
