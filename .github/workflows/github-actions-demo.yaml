@@ -1,11 +1,6 @@
 name: workflow_demo
 
-on:
-  push:
-    branches: [main, feat/*]
-  pull_request:
-    branches: [feat/*]
-
+on: pull_request
 jobs:
   build:
     runs-on: ubuntu-latest
