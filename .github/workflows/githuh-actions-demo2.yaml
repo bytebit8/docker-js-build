@@ -4,30 +4,30 @@ on: pull_request
 
 jobs:
   job0:
-    runs-on: ubuntu-latest
+    runs-on: aliyun
     steps:
       - run: ls -lha ../ & pwd
       - run: ls -lha ../.. & pwd
       - run: ls -lha ~ & pwd
-  job1:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Hello, world!" > greetings.txt
-      - uses: actions/upload-artifact@v4
-        with:
-          name: greetings.txt
-          path: ./greetings.txt
-  job2:
-    runs-on: ubuntu-latest
-    needs: job1
-    steps:
-      - run: ls -lha
-      - run: cat greetings.txt
-  job3:
-    runs-on: ubuntu-latest
-    needs: job1
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: greetings.txt
-      - run: cat greetings.txt
+  # job1:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - run: echo "Hello, world!" > greetings.txt
+  #     - uses: actions/upload-artifact@v4
+  #       with:
+  #         name: greetings.txt
+  #         path: ./greetings.txt
+  # job2:
+  #   runs-on: ubuntu-latest
+  #   needs: job1
+  #   steps:
+  #     - run: ls -lha
+  #     - run: cat greetings.txt
+  # job3:
+  #   runs-on: ubuntu-latest
+  #   needs: job1
+  #   steps:
+  #     - uses: actions/download-artifact@v4
+  #       with:
+  #         name: greetings.txt
+  #     - run: cat greetings.txt
