@@ -6,7 +6,7 @@ jobs:
   job:
     runs-on: aliyun
     steps:
-      - run: exit 1
+      - run: sleep 3000
   job-failure:
     runs-on: aliyun
     needs: job
