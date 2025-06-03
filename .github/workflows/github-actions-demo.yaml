@@ -32,3 +32,10 @@ jobs:
         run: npm install
       - name: Build product
         run: npm run build
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: assets
+          path: |
+            dist
+            !dist/**/*.md
