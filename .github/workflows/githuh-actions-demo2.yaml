@@ -6,7 +6,7 @@ jobs:
   job:
     runs-on: aliyun
     steps:
-      - run: sleep 3000
+      - run: echo "job!"
   job-failure:
     runs-on: aliyun
     needs: job
