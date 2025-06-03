@@ -1,11 +1,7 @@
 name: workflow_demo
 
 on:
-  pull_request_target:
-    types:
-      - opened
-    branches:
-      - main
+  pull_request
 
 jobs:
   build:
