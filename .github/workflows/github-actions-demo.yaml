@@ -17,3 +17,5 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+
+# 使用 cache 缓存依赖
