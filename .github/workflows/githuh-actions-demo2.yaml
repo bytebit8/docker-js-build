@@ -6,7 +6,9 @@ jobs:
   job0:
     runs-on: ubuntu-latest
     steps:
-      - run: ls -lha ~
+      - run: ls -lha ../ & pwd
+      - run: ls -lha ../.. & pwd
+      - run: ls -lha ~ & pwd
   job1:
     runs-on: ubuntu-latest
     steps:
