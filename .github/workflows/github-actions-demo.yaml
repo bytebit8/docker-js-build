@@ -41,7 +41,6 @@ jobs:
         uses: actions/attest-build-provenance@v2
         with:
           subject-path: dist
-          subject-type: directory
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
