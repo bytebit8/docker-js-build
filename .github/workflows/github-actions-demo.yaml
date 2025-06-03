@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/cache@v4
         with:
-          key: node-modules-${{ hashFiles('./package-lock.json') }}
+          key: node-modules-${{ hashFiles('package-lock.json') }}
           path: ~/runner/.npm
       - name: Install dependencies
         run: npm install
