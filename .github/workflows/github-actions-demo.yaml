@@ -10,5 +10,6 @@ jobs:
       - run: ls -lha
       - run: pwd
       - run: ls -lha ~
-      - run: npm -v
+      - run: npm config list -l
+      - run: npm cache
 # 使用 cache 缓存依赖
