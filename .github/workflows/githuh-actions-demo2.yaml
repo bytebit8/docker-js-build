@@ -9,11 +9,13 @@ jobs:
       - run: echo "job1!"
   job2:
     runs-on: aliyun
+    needs: job1
     if: ${{ failure() }}
     steps:
       - run: echo "failure!"
   job3:
     runs-on: aliyun
+    needs: job1
     if: ${{ success() }}
     steps:
       - run: echo "success!"
