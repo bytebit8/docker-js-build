@@ -3,19 +3,25 @@ name: workflow_demo
 on: pull_request
 
 jobs:
-  job1:
+  job:
     runs-on: aliyun
     steps:
       - run: exit 1
-  job2:
+  job-failure:
     runs-on: aliyun
-    needs: job1
+    needs: job
     if: ${{ failure() }}
     steps:
       - run: echo "failure!"
-  job3:
+  job-success:
     runs-on: aliyun
-    needs: job1
+    needs: job
     if: ${{ success() }}
     steps:
       - run: echo "success!"
+  job-always:
+    runs-on: aliyun
+    needs: job
+    if: ${{ always() }}
+    steps:
+      - run: echo "always!"
