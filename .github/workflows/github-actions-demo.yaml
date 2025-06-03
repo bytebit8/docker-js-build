@@ -18,4 +18,4 @@ jobs:
         run: npm run build
       - name: list files
         run: ls -lha ~
-# 使用 cache 缓存依赖1
+# 使用 cache 缓存依赖2
