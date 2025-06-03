@@ -3,8 +3,7 @@ name: workflow_demo
 on:
   pull_request
   push:
-     branches:
-        - main
+     branches: [main]
 
 jobs:
   build:
