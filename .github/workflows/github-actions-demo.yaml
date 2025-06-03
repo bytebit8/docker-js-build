@@ -11,9 +11,11 @@ jobs:
       - uses: actions/cache@v4
         with:
           key: node-modules-${{ hashFiles('package-lock.json') }}
-          path: ~/runner/.npm
+          path: /home/runner/.npm
       - name: Install dependencies
         run: npm install
       - name: Build Product
         run: npm run build
+      - name: list files
+        run: ls -lha ~
 # 使用 cache 缓存依赖1
