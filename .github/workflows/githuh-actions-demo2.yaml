@@ -3,6 +3,10 @@ name: download-artifact
 on: pull_request
 
 jobs:
+  job0:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ls -lha ~
   job1:
     runs-on: ubuntu-latest
     steps:
