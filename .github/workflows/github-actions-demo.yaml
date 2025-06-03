@@ -6,6 +6,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    cache:
+      key: my-caches
+      path: ~/.npm
     steps:
-      - run: sleep 3
-      - run: echo "Success!"
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
+      - name: Build
+        run: npm run build
