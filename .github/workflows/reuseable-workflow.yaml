@@ -1,13 +1,24 @@
 name: Reuseable Workflow
 
 on:
-  workflow_call
-
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+        default: ""
+      age:
+        type: number
+        default: 18
+    secrets:
+      TOKEN:
+        required: true
+        type: string
 jobs:
   job:
     runs-on: aliyun
     steps:
-      - name: job exec
-        run: |
-          sleep 10
-          echo "job exec"
+      - run: |
+          echo "name: ${{ inputs.name }}"
+          echo "age: ${{ inputs.age }}"
+          echo "token: ${{ secrets.TOKEN }}"
