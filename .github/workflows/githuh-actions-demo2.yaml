@@ -1,7 +1,9 @@
 name: workflow_demo
 
 on:
-  pull_request_target
+  pull_request_target:
+    branches:
+      - main
 
 jobs:
   job:
