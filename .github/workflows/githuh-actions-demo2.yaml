@@ -8,10 +8,6 @@ on:
 jobs:
   job:
     runs-on: aliyun
-    env:
-      GREETING: Hello
     steps:
-      - name: Step Env
-        env:
-          OS: ${{runner.os}}
-        run: echo $GREETING "${{ env.OS }}"
+      - run: echo "${{ github.sha }}"
+      - run: echo "${{ github.ref }}"
