@@ -4,6 +4,6 @@ on: pull_request
 
 jobs:
   call-workflow:
-    - name: "xxxxxxxx"
-      uses: ./.github/workflows/reuseable-workflow.yaml
-      runs-on: [aliyun]
+    name: "xxxxxxxx"
+    uses: ./.github/workflows/reuseable-workflow.yaml
+    runs-on: [aliyun]
