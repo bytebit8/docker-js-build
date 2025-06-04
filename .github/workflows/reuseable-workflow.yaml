@@ -11,7 +11,7 @@ on:
         type: number
         default: 18
     secrets:
-      TOKEN:
+      USER_PASSWORD:
         required: true
 jobs:
   job:
@@ -21,4 +21,4 @@ jobs:
         run: |
           echo "name: ${{ inputs.name }}"
           echo "age: ${{ inputs.age }}"
-          echo "token: ${{ secrets.TOKEN }}"
+          echo "token: ${{ secrets.USER_PASSWORD }}"
