@@ -3,15 +3,11 @@ name: workflow_demo
 on: pull_request
 
 jobs:
-  job1:
+
+  job2:
     runs-on: aliyun
     env:
       GREETING: Hello
-    steps:
-      - run: echo ${{ env.GREETING }}
-  job2:
-    runs-on: aliyun
-    needs: job1
     steps:
       - name: Step Env
         env:
