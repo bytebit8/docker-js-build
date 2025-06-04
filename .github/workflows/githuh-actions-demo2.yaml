@@ -1,16 +1,17 @@
-name: workflow_demo2
+name: workflow_demo
 
 on:
-  push:
-    branches: [develop]
-
-concurrency:
-  group: build
-  cancel-in-progress: false
+  pull_request_target:
+    branches:
+      - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  job:
+    runs-on: aliyun
+    env:
+      GREETING: Hello
     steps:
-      - run: sleep 3
-      - run: echo "Success!"
+      - name: Step Env
+        env:
+          OS: ${{runner.os}}
+        run: echo $GREETING "${{ env.OS }}"

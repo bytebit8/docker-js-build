@@ -1,24 +1,51 @@
-name: workflow_demo
+name: Cache with npm
 
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
+  # pull_request:
+  #   branches: [main]
+
+permissions:
+  id-token: write
+  contents: write
+  attestations: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: list npm config
-        run: npm config list -l
       - uses: actions/checkout@v3
-      - uses: actions/cache@v4
+      - name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-node-modules
+          cache-os: ${{ runner.os }}
         with:
-          key: node-modules-${{ hashFiles('package-lock.json') }}
+          key: ${{ env.cache-os }}-${{ env.cache-name }}-${{ hashFiles('./package-lock.json') }}
           path: ~/.npm
+          restore-keys: |
+            ${{ env.cache-os }}-${{ env.cache-name }}-
+            ${{ env.cache-os }}-
+            ${{ runner.os }}-
+      - name: List node modules
+        if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        continue-on-error: true
+        run: npm list
       - name: Install dependencies
         run: npm install
-      - name: Build Product
+      - name: Build product
         run: npm run build
-# 使用 cache 缓存依赖2
+      - name: zip assets
+        run: zip -r assets.zip ./dist
+      - name: Generate build provenance
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: ./assets.zip
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: assets
+          path: |
+            ./assets.zip
