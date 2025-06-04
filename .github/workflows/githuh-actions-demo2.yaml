@@ -7,10 +7,13 @@ jobs:
     runs-on: aliyun
     steps:
       - name: "test"
-        run: echo "success!"
+        run: echo "test success!"
       - name: "deploy"
         if: ${{ success()}}
         run: echo "deploy!"
       - name: "notify"
         if: ${{ failure()}}
         run: echo "notify!"
+      - name: "always"
+        if: ${{ always()}}
+        run: echo "always!"
