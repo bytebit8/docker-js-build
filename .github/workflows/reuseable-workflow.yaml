@@ -7,7 +7,7 @@ jobs:
   job:
     runs-on: aliyun
     steps:
-      - run: |
-        sleep 10
-        echo "reuseable workflow"
-
+      - name: job exec
+        run: |
+          sleep 10
+          echo "job exec"
