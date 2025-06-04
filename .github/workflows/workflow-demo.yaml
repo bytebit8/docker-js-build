@@ -1,0 +1,8 @@
+name: Workflow Demo
+
+on: pull_request
+
+jobs:
+  job:
+    runs-on: aliyun
+    uses: ./reuseable-workflow.yaml
