@@ -4,7 +4,7 @@ on: pull_request
 
 jobs:
   call-workflow:
-    runs-on: aliyun
+    runs-on: [aliyun]
     uses: ./.github/workflows/reuseable-workflow.yaml
     with:
       message: "Hello, world!"
