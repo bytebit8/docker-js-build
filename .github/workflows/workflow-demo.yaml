@@ -8,5 +8,4 @@ jobs:
     with:
       name: "test"
       age: 18
-    secrets:
-      TOKEN: ${{ secrets.USER_PASSWORD }}
+    secrets: inherit
