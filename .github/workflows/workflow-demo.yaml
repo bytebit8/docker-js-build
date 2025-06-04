@@ -5,4 +5,4 @@ on: pull_request
 jobs:
   job:
     runs-on: aliyun
-    uses: ../.github/workflows/reuseable-workflow.yaml
+    uses: ./.github/workflows/reuseable-workflow.yaml
