@@ -1,10 +1,9 @@
 name: workflow_demo
 
-on: pull_request
+on: pull_request_target
 
 jobs:
-
-  job2:
+  job:
     runs-on: aliyun
     env:
       GREETING: Hello
