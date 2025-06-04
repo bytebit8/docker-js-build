@@ -3,17 +3,16 @@ name: workflow_demo
 on: pull_request
 
 jobs:
-  job:
+  job1:
+    runs-on: aliyun
+    env:
+      GREETING: Hello
+    steps:
+      - run: echo ${{ env.GREETING }}
+  job2:
     runs-on: aliyun
     steps:
-      - name: "test"
-        run: echo "test success!"
-      - name: "deploy"
-        if: ${{ success()}}
-        run: echo "deploy!"
-      - name: "notify"
-        if: ${{ failure()}}
-        run: echo "notify!"
-      - name: "always"
-        if: ${{ always()}}
-        run: echo "always!"
+      - name: Step Env
+        env:
+          OS: ${{runner.os}}
+        run: echo "$GREETING ${{ env.OS }}"
