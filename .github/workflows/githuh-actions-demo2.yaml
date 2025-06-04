@@ -6,28 +6,11 @@ jobs:
   job:
     runs-on: aliyun
     steps:
-      - run: echo "job!"
-  job-failure:
-    runs-on: aliyun
-    needs: job
-    if: ${{ failure() }}
-    steps:
-      - run: echo "failure!"
-  job-success:
-    runs-on: aliyun
-    needs: job
-    if: ${{ success() }}
-    steps:
-      - run: echo "success!"
-  job-always:
-    runs-on: aliyun
-    needs: job
-    if: ${{ always() }}
-    steps:
-      - run: echo "always!"
-  job-cancelled:
-    runs-on: aliyun
-    needs: job
-    if: ${{ cancelled() }}
-    steps:
-      - run: echo "cancelled!"
+      - name: "test"
+        run: echo "success!"
+      - name: "deploy"
+        if: ${{ success()}}
+        run: echo "deploy!"
+      - name: "notify"
+        if: ${{ failure()}}
+        run: echo "notify!"
