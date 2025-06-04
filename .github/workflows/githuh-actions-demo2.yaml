@@ -12,4 +12,4 @@ jobs:
       - name: Step Env
         env:
           OS: ${{runner.os}}
-        run: echo $GREETING
+        run: echo $GREETING "${{ env.OS }}"
