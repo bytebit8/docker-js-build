@@ -13,12 +13,12 @@ on:
     secrets:
       TOKEN:
         required: true
-        type: string
 jobs:
   job:
     runs-on: aliyun
     steps:
-      - run: |
+      - name: job exec
+        run: |
           echo "name: ${{ inputs.name }}"
           echo "age: ${{ inputs.age }}"
           echo "token: ${{ secrets.TOKEN }}"
