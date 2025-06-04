@@ -5,6 +5,5 @@ on:
 
 jobs:
   job:
-    runs-on: aliyun
     steps:
       - run: echo "reuseable workflow"
