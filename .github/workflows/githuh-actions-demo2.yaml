@@ -11,6 +11,7 @@ jobs:
       - run: echo ${{ env.GREETING }}
   job2:
     runs-on: aliyun
+    needs: job1
     steps:
       - name: Step Env
         env:
