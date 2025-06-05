@@ -9,7 +9,7 @@ jobs:
       dataSource: ${{ steps.get_data.outputs.dataSource }}
     steps:
       - id: get_data
-        run: echo "dataSource={\"name\": \"test\"}" >> $GITHUB_OUTPUT
+        run: echo "dataSource={}" >> $GITHUB_OUTPUT
 
   job2:
     runs-on: aliyun
