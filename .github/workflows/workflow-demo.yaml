@@ -16,4 +16,6 @@ jobs:
       INFOAB: ${{ fromJSON(toJSON(needs.call-workflow.outputs.person_info)) }}
     steps:
       - id: info
-        run: echo $INFOAB.name
+        env:
+          DATA: ${{ env.INFOAB.name}}
+        run: echo $DATA
