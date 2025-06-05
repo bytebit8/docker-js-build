@@ -12,7 +12,7 @@ jobs:
     steps:
       - id: get_data
         run: |
-          JSON_DATA={"name":"test"}
+          JSON_DATA="{\"name\":\"test\"}"
           echo "dataSource=$JSON_DATA" >> $GITHUB_OUTPUT
 
   job2:
@@ -20,4 +20,4 @@ jobs:
     needs: job1
     steps:
       - run: echo "${{toJSON(needs.job1.outputs.dataSource)}}"
-      - run: echo "${{fromJSON(toJSON(needs.job1.outputs.dataSource)).name}}"
+      - run: echo "${{fromJSON(needs.job1.outputs.dataSource).name}}"
