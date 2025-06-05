@@ -17,5 +17,5 @@ jobs:
     runs-on: aliyun
     needs: job1
     steps:
-      - run: echo "${{fromJSON(toJSON(needs.job1.outputs.dataSource))}}"
+      - run: echo "${{fromJSON(toJSON(needs.job1.outputs.dataSource)).name}}"
       - run: echo "${{toJSON(needs.job1.outputs.dataSource)}}"
