@@ -13,8 +13,8 @@ jobs:
     needs: call-workflow
     runs-on: aliyun
     env:
-      INFOA: ${{ toJSON(needs.call-workflow.outputs.person_info) }}
+      INFOAB: ${{ toJSON(needs.call-workflow.outputs.person_info) }}
     steps:
       - id: info
-        run: echo $INFOA
+        run: echo $INFOAB
 
