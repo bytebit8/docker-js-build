@@ -16,7 +16,7 @@ on:
     outputs:
       person_info:
         description: "person info"
-        value: ${{ jobs.person_info.outputs.person_info }}
+        value: ${{ jobs.job.outputs.person_info }}
 jobs:
   job:
     runs-on: aliyun
