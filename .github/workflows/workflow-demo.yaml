@@ -12,7 +12,7 @@ jobs:
     steps:
       - id: get_data
         run: |
-          JSON_DATA="{\"name\": \"test\"}"
+          JSON_DATA={"name": "test"}
           echo "dataSource=${{JSON_DATA}}" >> $GITHUB_OUTPUT
 
   job2:
