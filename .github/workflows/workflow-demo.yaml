@@ -13,4 +13,4 @@ jobs:
     runs-on: aliyun
     needs: call-workflow
     steps:
-      - run: echo ${{ fromJSON(needs.call-workflow.outputs.person_info) }}
+      - run: echo ${{ toJSON(fromJSON(needs.call-workflow.outputs.person_info)) }}
