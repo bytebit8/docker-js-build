@@ -3,17 +3,16 @@ name: Workflow Demo
 on: pull_request
 
 jobs:
-  # call-workflow:
-  #   uses: ./.github/workflows/reuseable-workflow.yaml
-  #   with:
-  #     name: "test"
-  #     age: 18
-  #   secrets: inherit
-  call-workflow-outputs:
-    # needs: call-workflow
+  job1:
     runs-on: aliyun
-    env:
-      D1: ${{ toJSON('{"name": "test", "age": "18"}') }}
+    outputs:
+      dataSource: ${{ steps.get_data.outputs.dataSource }}
     steps:
-      - id: info
-        run: echo $D1
+      - id: get_data
+        run: echo "dataSource={\"name\": \"test\"}" >> $GITHUB_OUTPUT
+
+  job2:
+    runs-on: aliyun
+    needs: job1
+    steps:
+      - run: echo "${{needs.job1.outputs.dataSource}}"
