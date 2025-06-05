@@ -3,17 +3,17 @@ name: Workflow Demo
 on: pull_request
 
 jobs:
-  call-workflow:
-    uses: ./.github/workflows/reuseable-workflow.yaml
-    with:
-      name: "test"
-      age: 18
-    secrets: inherit
+  # call-workflow:
+  #   uses: ./.github/workflows/reuseable-workflow.yaml
+  #   with:
+  #     name: "test"
+  #     age: 18
+  #   secrets: inherit
   call-workflow-outputs:
-    needs: call-workflow
+    # needs: call-workflow
     runs-on: aliyun
     env:
-      DATA: ${{ fromJSON('{"name":"xxx"}').name }}
+      DATA: ${{ fromJSON('[{"name":"xxx"}, {"name":"yyy"}]') }}
     steps:
       - id: info
         run: echo $DATA
