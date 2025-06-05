@@ -18,4 +18,4 @@ jobs:
       - id: info
         env:
           DATA: ${{ env.INFOAB.name}}
-        run: echo $DATA
+        run: echo $INFOAB
