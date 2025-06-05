@@ -9,3 +9,8 @@ jobs:
       name: "test"
       age: 18
     secrets: inherit
+  call-workflow-outputs:
+    needs: call-workflow
+    runs-on: aliyun
+    steps:
+      - run: echo "${{ needs.call-workflow.outputs.person_info }}"

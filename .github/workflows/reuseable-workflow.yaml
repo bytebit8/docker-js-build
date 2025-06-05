@@ -13,12 +13,16 @@ on:
     secrets:
       USER_PASSWORD:
         required: true
+    outputs:
+      person_info:
+        description: "person info"
+        value: ${{ jobs.person_info.outputs.person_info }}
 jobs:
   job:
     runs-on: aliyun
     steps:
-      - name: job exec
-        run: |
-          echo "name: ${{ inputs.name }}"
-          echo "age: ${{ inputs.age }}"
-          echo "token: ${{ secrets.USER_PASSWORD }}"
+      - name: person_info job
+        id: person_info
+        outputs:
+          person_info: ${{ steps.person_info.outputs.person_info }}
+        run: echo "person_info = '{\"name\": \"${{ inputs.name }}\", \"age\": ${inputs.age}}'" >> $GITHUB_OUTPUT
