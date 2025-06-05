@@ -13,7 +13,7 @@ jobs:
     # needs: call-workflow
     runs-on: aliyun
     env:
-      DATA: ${{ fromJSON('[{"name":"xxx"}, {"name":"yyy"}]').*.name }}
+      DATA: ${{ fromJSON('[1,2]') }}
     steps:
       - id: info
         run: echo $DATA
