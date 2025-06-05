@@ -11,11 +11,13 @@ jobs:
       name: test
     steps:
       - id: get_data
-        run: echo "dataSource={name:${{ env.name }}}" >> $GITHUB_OUTPUT
+        run: |
+          JSON_DATA="{\"name\": \"test\"}"
+          echo "dataSource=${{JSON_DATA}}" >> $GITHUB_OUTPUT
 
   job2:
     runs-on: aliyun
     needs: job1
     steps:
-      - run: echo "${{fromJSON(toJSON(needs.job1.outputs.dataSource)).name}}"
       - run: echo "${{toJSON(needs.job1.outputs.dataSource)}}"
+      - run: echo "${{fromJSON(toJSON(needs.job1.outputs.dataSource)).name}}"
