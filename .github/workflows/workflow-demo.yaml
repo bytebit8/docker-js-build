@@ -12,5 +12,9 @@ jobs:
   call-workflow-outputs:
     needs: call-workflow
     runs-on: aliyun
+    env:
+      INFO: ${{ needs.call-workflow.outputs.person_info }}
     steps:
-      - run: echo "${{ needs.call-workflow.outputs.person_info }}"
+      - id: info
+        run: echo $INFO
+
