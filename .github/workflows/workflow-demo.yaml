@@ -4,7 +4,7 @@ on: pull_request
 
 jobs:
   call-workflow:
-    uses: ./.github/workflows/Reuseable-Workflow.yaml
+    uses: ./.github/workflows/reuseable-workflow.yaml
     with:
       name: test
       age: 18
