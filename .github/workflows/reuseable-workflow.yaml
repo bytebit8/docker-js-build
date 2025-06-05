@@ -25,5 +25,5 @@ jobs:
     steps:
       - id: person_info_step
         run: |
-          INFO_DATA = "{\"name\":${{ inputs.name }},\"age\":${{ inputs.age }}}"
+          INFO_DATA="{\"name\":${{ inputs.name }},\"age\":${{ inputs.age }}}"
           echo "person_info=$INFO_DATA" >> $GITHUB_OUTPUT
