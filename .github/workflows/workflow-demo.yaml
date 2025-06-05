@@ -12,6 +12,8 @@ jobs:
   call-workflow-outputs:
     needs: call-workflow
     runs-on: aliyun
+    env:
+      DATA: ${{ fromJSON('{"name":"xxx"}').name }}
     steps:
       - id: info
-        run: echo "${{ fromJSON('{"name":"xxx"}').name }}"
+        run: echo $DATA
