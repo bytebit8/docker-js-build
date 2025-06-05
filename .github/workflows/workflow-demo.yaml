@@ -13,7 +13,7 @@ jobs:
     needs: call-workflow
     runs-on: aliyun
     env:
-      INFOAB: ${{ fromJSON('{"name":"test","age":18}') }}
+      INFOAB: ${{ toJSON({"name":"test","age":18}) }}
     steps:
       - id: info
         env:
