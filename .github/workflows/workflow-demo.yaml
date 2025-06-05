@@ -13,7 +13,7 @@ jobs:
     # needs: call-workflow
     runs-on: aliyun
     env:
-      D1: ${{ toJSON("[]") }}
+      D1: ${{ toJSON({"name": "test", "age": "18"}) }}
     steps:
       - id: info
         run: echo $D1
