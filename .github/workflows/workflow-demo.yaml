@@ -7,9 +7,11 @@ jobs:
     runs-on: aliyun
     outputs:
       dataSource: ${{ steps.get_data.outputs.dataSource }}
+    env:
+      name: test
     steps:
       - id: get_data
-        run: echo "dataSource={name:test}" >> $GITHUB_OUTPUT
+        run: echo "dataSource={name:${{ env.name }}}" >> $GITHUB_OUTPUT
 
   job2:
     runs-on: aliyun
