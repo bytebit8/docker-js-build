@@ -13,7 +13,7 @@ jobs:
       - id: get_data
         run: |
           JSON_DATA={"name":"test"}"
-          echo "dataSource=$JSON_DATA" >> $GITHUB_OUTPUT
+          echo "dataSource=${{ toJSON($JSON_DATA) }}" >> $GITHUB_OUTPUT
 
   job2:
     runs-on: aliyun
