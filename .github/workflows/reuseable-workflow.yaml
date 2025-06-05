@@ -25,4 +25,4 @@ jobs:
         id: person_info
         outputs:
           person_info: ${{ steps.person_info.outputs.person_info }}
-        run: echo "person_info = '{\"name\": \"${{ inputs.name }}\", \"age\": ${inputs.age}}'" >> $GITHUB_OUTPUT
+        run: echo "person_info = {\"name\": \"${{ inputs.name }}\", \"age\": ${inputs.age}}" >> $GITHUB_OUTPUT
