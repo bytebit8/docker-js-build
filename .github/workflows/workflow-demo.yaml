@@ -12,8 +12,6 @@ jobs:
   call-workflow-outputs:
     needs: call-workflow
     runs-on: aliyun
-    env:
-      INFOAB: ${{ fromJSON(needs.call-workflow.outputs.person_info) }}
     steps:
       - id: info
-        run: echo $INFOAB
+        run: echo "${{ fromJSON('{"name":"xxx"}').name }}"
