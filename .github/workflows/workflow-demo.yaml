@@ -11,7 +11,7 @@ jobs:
       - id: get_data
         run: |
           JSON_DATA=''
-          echo "dataSource={"name": "test"}" >> $GITHUB_OUTPUT
+          echo "dataSource={\"name\": \"test\"}" >> $GITHUB_OUTPUT
 
   job2:
     runs-on: aliyun
