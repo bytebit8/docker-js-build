@@ -5,10 +5,7 @@ on: pull_request
 jobs:
   job:
     runs-on: aliyun
-    services:
-      dind:
-        image: docker:dind
+    container:
+      image: docker:dind
     steps:
-      - name: Build image
-        run: |
-          docker build -t myapp .
+      - run: echo "Hello, world!"
