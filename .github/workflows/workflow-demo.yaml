@@ -12,4 +12,6 @@ jobs:
           MYSQL_ROOT_PASSWORD: password
       app:
         image: ubuntu:latest
+        depends-on:
+          - mysql
         command: ping mysql
