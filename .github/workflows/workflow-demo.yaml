@@ -4,6 +4,7 @@ on: pull_request
 
 jobs:
   job:
+    runs-on: aliyun
     services:
       mysql:
         image: mysql:8.0
