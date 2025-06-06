@@ -3,11 +3,13 @@ name: Workflow Demo
 on: pull_request
 
 jobs:
+  job0:
+    runs-on: aliyun
+    steps:
+      - run: docker -v
   job:
     runs-on: aliyun
     container:
       image: docker:dind
     steps:
-      - run: echo "Hello, world!"
-      - run: uname -a
-      - run: cat /etc/os-release
+      - run: docker -v
