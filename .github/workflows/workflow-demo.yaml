@@ -14,3 +14,4 @@ jobs:
       image: alpine:latest
     steps:
       - run: cat /etc/os-release
+      - run: ping mysql
