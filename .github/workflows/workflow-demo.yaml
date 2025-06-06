@@ -5,9 +5,11 @@ on: pull_request
 jobs:
   job:
     runs-on: aliyun
-    container:
-      image: node:latest
-      env:
-        NODE_ENV: development
-    steps:
-      - run: echo "Hello, world!"
+    services:
+      dind:
+        image: docker:dind
+        privileged: true
+      steps:
+       - name: Build image
+         run: |
+          docker build -t myapp .
