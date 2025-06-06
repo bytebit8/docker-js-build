@@ -3,13 +3,11 @@ name: Workflow Demo
 on: pull_request
 
 jobs:
-  job0:
-    runs-on: aliyun
-    steps:
-      - run: docker -v
   job:
-    runs-on: aliyun
-    container:
-      image: docker:dind
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: password
     steps:
-      - run: docker -v
+      - run: mysql -h mysql -u root -ppassword -e "SELECT 1"
