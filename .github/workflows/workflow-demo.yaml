@@ -6,13 +6,9 @@ jobs:
   job:
     runs-on: aliyun
     services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: password
+      nginx:
+        image: nginx:latest
     container:
       image: alpine:latest
     steps:
-      - run: cat /etc/os-release
-      - run: apk add mysql-client
-      - run: mysql -h mysql -u root -ppassword -e "SELECT 1"
+      - run: curl nginx
