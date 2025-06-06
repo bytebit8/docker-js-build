@@ -11,6 +11,6 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: password
     container:
-      image: ubuntu:latest
+      image: alpine:latest
     steps:
       - run: cat /etc/os-release
