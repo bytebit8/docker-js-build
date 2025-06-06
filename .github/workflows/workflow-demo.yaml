@@ -10,8 +10,7 @@ jobs:
         image: mysql:8.0
         env:
           MYSQL_ROOT_PASSWORD: password
-      app:
-        image: ubuntu:latest
-        command: ping mysql
+    container:
+      image: ubuntu:latest
     steps:
-      - run: echo "Hello, world!"
+      - run: ping mysql
