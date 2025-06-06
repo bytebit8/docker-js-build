@@ -9,7 +9,7 @@ jobs:
       dind:
         image: docker:dind
         privileged: true
-      steps:
-       - name: Build image
-         run: |
+    steps:
+      - name: Build image
+        run: |
           docker build -t myapp .
