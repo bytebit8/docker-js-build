@@ -13,4 +13,4 @@ jobs:
     container:
       image: ubuntu:latest
     steps:
-      - run: ping mysql
+      - run: cat /etc/os-release
