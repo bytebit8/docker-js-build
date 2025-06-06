@@ -9,3 +9,4 @@ jobs:
       image: docker:dind
     steps:
       - run: echo "Hello, world!"
+      - run: uname -a
