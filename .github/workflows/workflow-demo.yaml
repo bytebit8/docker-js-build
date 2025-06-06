@@ -6,7 +6,7 @@ jobs:
   job:
     runs-on: aliyun
     container:
-      image: node:20-alpine
+      image: node:latest
       env:
         NODE_ENV: development
     steps:
