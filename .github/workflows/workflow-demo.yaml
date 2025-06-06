@@ -10,6 +10,6 @@ jobs:
         image: mysql:8.0
         env:
           MYSQL_ROOT_PASSWORD: password
-    steps:
-      - run: ping mysql
-      - run: mysql -h mysql -u root -ppassword -e "SELECT 1"
+      app:
+        image: ubuntu:latest
+        command: ping mysql
