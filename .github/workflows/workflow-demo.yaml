@@ -9,7 +9,6 @@ jobs:
       nginx:
         image: nginx:latest
     container:
-      image: alpine:latest
+      image: ubuntu:latest
     steps:
-      - run: apk add curl
       - run: curl nginx
