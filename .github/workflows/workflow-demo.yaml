@@ -11,4 +11,5 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: password
     steps:
+      - run: ping mysql
       - run: mysql -h mysql -u root -ppassword -e "SELECT 1"
