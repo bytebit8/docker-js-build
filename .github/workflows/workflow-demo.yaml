@@ -11,4 +11,5 @@ jobs:
     container:
       image: alpine:latest
     steps:
+      - run: apk add curl
       - run: curl nginx
