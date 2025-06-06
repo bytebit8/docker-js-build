@@ -11,6 +11,7 @@ jobs:
     container:
       image: ubuntu:latest
     steps:
+      - run: apt-get install curl
       - run: curl nginx
 
 #
