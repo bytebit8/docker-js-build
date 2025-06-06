@@ -10,3 +10,4 @@ jobs:
     steps:
       - run: echo "Hello, world!"
       - run: uname -a
+      - run: cat /etc/os-release
