@@ -3,16 +3,11 @@ name: Workflow Demo
 on: pull_request
 
 jobs:
-  call-workflow:
-    uses: ./.github/workflows/reuseable-workflow.yaml
-    with:
-      name: test
-      age: 18
-    secrets: inherit
-  call-workflow-outputs:
+  job:
     runs-on: aliyun
-    needs: call-workflow
+    container:
+      image: node:20-alpine
+      env:
+        NODE_ENV: development
     steps:
-      - run: echo "${{ toJSON(fromJSON(needs.call-workflow.outputs.person_info)) }}"
-
-# test
+      - run: echo "Hello, world!"
