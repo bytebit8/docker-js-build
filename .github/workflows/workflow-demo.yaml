@@ -1,15 +1,9 @@
-name: Workflow Demo
+name: workflow-demo
 
 on: pull_request
 
 jobs:
   job:
     runs-on: aliyun
-    services:
-      nginx:
-        image: nginx:latest
-    container:
-      image: alpine:latest
     steps:
-      - run: apk add curl
-      - run: curl nginx
+      - run: echo 'Hello, world!'
