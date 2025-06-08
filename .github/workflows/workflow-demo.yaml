@@ -6,6 +6,6 @@ jobs:
   job:
     runs-on: aliyun
     container:
-      image: ubuntu:latest
+      image: nginx
     steps:
-      - run: echo 'Hello, world!!'
+      - run: curl http://localhost:8080
