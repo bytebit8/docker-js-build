@@ -7,9 +7,12 @@ jobs:
     runs-on: aliyun
     container:
       image: docker:28.2.2-dind-alpine3.22
-      options: --privileged --volume=/var/lib/docker.sock:/var/lib/docker.sock
+      options: --privileged  # 仅需特权模式，不挂载宿主机套接字
     steps:
       - name: OS Info
         run: cat /etc/os-release
       - name: Docker Info
-        run: docker info
+        run: |
+          # 显式指定连接容器内部的 DinD 服务
+          export DOCKER_HOST=tcp://localhost:2375
+          docker info
