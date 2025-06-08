@@ -7,6 +7,10 @@ jobs:
     runs-on: aliyun
     container:
       image: docker:28.2.2-dind-alpine3.22
+      volumes:
+        - /var/lib/docker.sock:/var/lib/docker.sock
+      env:
+        DOCKER_HOST: unix:///var/lib/docker.sock
       options:
         --privileged
     steps:
