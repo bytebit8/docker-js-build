@@ -6,7 +6,7 @@ jobs:
   job:
     runs-on: aliyun
     container:
-      image: docker:dind
+      image: docker:28.2.2-dind-alpine3.22
     steps:
       - name: Docker Pull
         run: docker pull nginx:latest
