@@ -3,17 +3,12 @@ name: workflow-demo
 on: pull_request
 
 jobs:
-  job:
-    runs-on: aliyun
+  build:
+    runs-on: ubuntu-latest
     container:
-      image: docker:28.2.2-dind-alpine3.22
+      image: docker:24.0.6  # 使用与宿主机兼容的Docker客户端版本
       volumes:
-        - /var/run/docker.sock:/var/run/docker.sock1
+        - /var/run/docker.sock:/var/run/docker.sock  # 挂载套接字
     steps:
-      - name: OS Info
-        run: |
-          cat /etc/os-release
-          pwd
-          ls -lha /
       - name: Docker Info
         run: docker info
