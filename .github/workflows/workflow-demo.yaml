@@ -7,10 +7,6 @@ jobs:
     runs-on: aliyun
     container:
       image: docker:28.2.2-dind-alpine3.22
-      env:
-        DOCKER_HOST: unix:///var/run/docker.sock
-      options:
-        --privileged
     steps:
       - name: OS Info
         run: cat /etc/os-release
