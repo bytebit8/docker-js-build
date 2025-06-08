@@ -11,6 +11,9 @@ jobs:
         - /var/run/docker.sock:/var/run/docker.sock1
     steps:
       - name: OS Info
-        run: cat /etc/os-release
+        run: |
+          cat /etc/os-release
+          pwd
+          ls -lha /
       - name: Docker Info
         run: docker info
