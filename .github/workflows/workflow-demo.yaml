@@ -9,6 +9,7 @@ jobs:
       image: docker:28.2.2-dind-alpine3.22
       volumes:
         - /var/lib/docker.sock:/var/lib/docker.sock
+      options: --privileged
     steps:
       - name: OS Info
         run: cat /etc/os-release
