@@ -8,11 +8,7 @@ jobs:
     container:
       image: docker:dind
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Build
-        run: npm run build
-      - name: Build Docker Image
-        run: docker build -t my-web-app .
-      - name: List images
+      - name: Docker Pull
+        run: docker pull nginx:latest
+      - name: Docker List
         run: docker images
