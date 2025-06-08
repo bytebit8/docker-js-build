@@ -8,9 +8,9 @@ jobs:
     container:
       image: docker:28.2.2-dind-alpine3.22
       volumes:
-        - /var/lib/docker.sock:/var/lib/docker.sock
+        - /var/run/docker.sock:/var/run/docker.sock
       env:
-        DOCKER_HOST: unix:///var/lib/docker.sock
+        DOCKER_HOST: unix:///var/run/docker.sock
       options:
         --privileged
     steps:
