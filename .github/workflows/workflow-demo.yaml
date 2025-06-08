@@ -4,7 +4,7 @@ on: pull_request
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: aliyun
     container:
       image: docker:24.0.6  # 使用与宿主机兼容的Docker客户端版本
       volumes:
