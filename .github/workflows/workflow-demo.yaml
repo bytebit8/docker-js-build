@@ -9,6 +9,6 @@ jobs:
       image: docker:28.2.2-dind-alpine3.22
     steps:
       - name: Docker Pull
-        run: docker pull nginx:latest
-      - name: Docker List
-        run: docker ps
+        run: cat /etc/os-release
+      - name: Test
+        run: docker -v
