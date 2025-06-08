@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: OS Info
         run: cat /etc/os-release
-      - name: LS
-        run: ls -lha /var/run/
+      - name: Docker Info
+        run: docker info
