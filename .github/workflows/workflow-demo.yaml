@@ -11,4 +11,4 @@ jobs:
       - name: Docker Pull
         run: docker pull nginx:latest
       - name: Docker List
-        run: docker images
+        run: docker ps
