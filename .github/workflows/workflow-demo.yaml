@@ -7,7 +7,7 @@ jobs:
     runs-on: aliyun
     container:
       image: docker:28.2.2-dind-alpine3.22
-      options: --privileged
+      options: --privileged --volume=/var/lib/docker.sock:/var/lib/docker.sock
     steps:
       - name: OS Info
         run: cat /etc/os-release
