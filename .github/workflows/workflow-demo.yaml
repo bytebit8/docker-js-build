@@ -12,3 +12,5 @@ jobs:
         run: cat /etc/os-release
       - name: Test
         run: docker -v
+      - name: Docker List
+        run: docker ps & docker images
