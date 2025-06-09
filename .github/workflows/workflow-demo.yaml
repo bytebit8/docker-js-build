@@ -13,6 +13,7 @@ jobs:
         env:
           DOCKER_TLS_CERTDIR: ""  # 禁用 TLS（仅限可信网络）
     steps:
-      - run: docker info
+      - name: Docker Info
         env:
           DOCKER_HOST: tcp://dind:2375
+        run: docker info
