@@ -16,3 +16,5 @@ jobs:
         run: |
           echo "DOCKER_HOST=tcp://dind:2375" >> $GITHUB_ENV
           docker info  # 测试连接
+
+#1
