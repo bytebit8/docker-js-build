@@ -7,13 +7,6 @@ jobs:
     runs-on: aliyun
     container:
       image: ubuntu:latest
-    services:
-      docker:
-        image: docker:dind
-        # 通过 options 传递特权模式参数
-        options: --privileged
-        ports:
-          - 2375:2375
     steps:
       - name: Install Docker
         run: |
