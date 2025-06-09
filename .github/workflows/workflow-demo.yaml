@@ -5,6 +5,8 @@ on: pull_request
 jobs:
   build:
     runs-on: aliyun
+    container:
+      image: ubuntu:latest
     services:
       dind:
         image: docker:dind
