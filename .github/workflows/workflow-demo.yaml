@@ -12,8 +12,8 @@ jobs:
         image: docker:dind
         # 通过 options 传递特权模式参数
         options: --privileged
-        volumes:
-          - /var/run/docker.sock:/var/run/docker.sock:ro
+        ports:
+          - 2375:2375
     steps:
       - name: Install Docker
         run: |
