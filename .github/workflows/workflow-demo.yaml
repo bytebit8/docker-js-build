@@ -3,12 +3,16 @@ name: workflow-demo
 on: pull_request
 
 jobs:
-  build:
+  job:
     runs-on: aliyun
-    container:
-      image: docker:24.0.6  # 使用与宿主机兼容的Docker客户端版本
-      volumes:
-        - /var/run/docker.sock:/var/run/docker.sock  # 挂载套接字
+    services:
+      dind:
+        image: docker:dind
+        privileged: true
+        env:
+          DOCKER_TLS_CERTDIR: ""  # 禁用TLS
     steps:
-      - name: Docker Info
-        run: docker info
+      - name: Set up Docker
+        run: |
+          echo "DOCKER_HOST=tcp://dind:2375" >> $GITHUB_ENV
+          docker info  # 测试连接
