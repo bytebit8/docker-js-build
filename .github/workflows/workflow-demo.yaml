@@ -7,6 +7,8 @@ jobs:
     runs-on: aliyun
     container:
       image: docker:dind
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock  # 关键挂载
     steps:
       - name: Docker Info
         run: docker info
