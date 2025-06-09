@@ -7,6 +7,7 @@ jobs:
     runs-on: aliyun
     container:
       image: docker:dind
+      options: --privileged
     steps:
       - name: Docker Info
         run: docker info
