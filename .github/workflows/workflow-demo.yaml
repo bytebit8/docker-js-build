@@ -12,10 +12,14 @@ jobs:
         image: docker:dind
         # 通过 options 传递特权模式参数
         options: --privileged
-        env:
-          DOCKER_TLS_CERTDIR: ""  # 禁用 TLS（仅限可信网络）
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock:ro
     steps:
-      - name: Docker Info
-        env:
-          DOCKER_HOST: tcp://dind:2375
-        run: docker info
+      - name: Install Docker
+        run: |
+          apt-get update
+          apt-get install -y docker.io
+      - name: Test Docker
+        run: |
+          docker version
+          docker info
