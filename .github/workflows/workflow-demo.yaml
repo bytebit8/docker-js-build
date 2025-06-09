@@ -10,6 +10,8 @@ jobs:
         image: docker:dind
         # 通过 options 传递特权模式参数
         options: --privileged
+        env:
+          DOCKER_TLS_CERTDIR: ""  # 禁用 TLS（仅限可信网络）
     steps:
       - run: docker info
         env:
