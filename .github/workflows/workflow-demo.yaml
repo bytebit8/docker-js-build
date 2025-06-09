@@ -6,7 +6,7 @@ jobs:
   job:
     runs-on: aliyun
     container:
-      image: nginx:latest
+      image: ubuntu:latest
     steps:
       - name: rq
-        run: curl -I http://localhost
+        run: echo "Hello, World!"
