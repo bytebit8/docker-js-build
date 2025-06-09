@@ -3,18 +3,14 @@ name: workflow-demo
 on: pull_request
 
 jobs:
-  job:
+  build:
     runs-on: aliyun
     services:
       dind:
         image: docker:dind
+        # 通过 options 传递特权模式参数
         options: --privileged
-        env:
-          DOCKER_TLS_CERTDIR: ""  # 禁用TLS
     steps:
-      - name: Set up Docker
-        run: |
-          echo "DOCKER_HOST=tcp://dind:2375" >> $GITHUB_ENV
-          docker info  # 测试连接
-
-#1
+      - run: docker info
+        env:
+          DOCKER_HOST: tcp://dind:2375
