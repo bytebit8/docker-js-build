@@ -8,6 +8,7 @@ jobs:
     services:
       dind:
         image: docker:dind
+        options: --privileged
         env:
           DOCKER_TLS_CERTDIR: ""  # 禁用TLS
     steps:
