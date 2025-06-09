@@ -8,7 +8,7 @@ jobs:
     container:
       image: ubuntu:latest
     services:
-      dind:
+      docker:
         image: docker:dind
         # 通过 options 传递特权模式参数
         options: --privileged
