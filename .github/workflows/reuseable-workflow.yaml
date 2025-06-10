@@ -1,0 +1,29 @@
+name: Reuseable Workflow
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+        default: ""
+      age:
+        type: number
+        default: 18
+    secrets:
+      USER_PASSWORD:
+        required: true
+    outputs:
+      person_info:
+        description: "person info"
+        value: ${{ jobs.generate_person_info.outputs.person_info }}
+jobs:
+  generate_person_info:
+    runs-on: aliyun
+    outputs:
+      person_info: ${{ steps.person_info_step.outputs.person_info }}
+    steps:
+      - id: person_info_step
+        run: |
+          INFO_DATA="{\"name\":\"${{ inputs.name }}\",\"age\":\"${{ inputs.age }}\"}"
+          echo "person_info=$INFO_DATA" >> $GITHUB_OUTPUT
