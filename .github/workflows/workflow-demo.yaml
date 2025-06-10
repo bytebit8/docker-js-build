@@ -5,6 +5,8 @@ on: pull_request
 jobs:
   job:
     runs-on: aliyun
+    container:
+      image: ubuntu:latest
     steps:
       - name: greeting
         run: echo "Hello, World!"
